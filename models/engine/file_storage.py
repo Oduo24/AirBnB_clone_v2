@@ -12,9 +12,12 @@ class FileStorage:
         """Returns a dictionary of models of type cls currently in storage"""
         if cls:
             objects_of_type_cls = {}
-            for k, v in FileStorage.__objects:
-                if k.split('.')[0] == cls:
+            for k, v in FileStorage.__objects.items():
+                if k.split('.')[0] == cls.__class__.__name__:
                     objects_of_type_cls[k] = v
+            return objects_of_type_cls
+        else:
+            return FileStorage.__objects
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
