@@ -27,7 +27,7 @@ def C_page(text):
 
 
 @app.route('/python/')
-@app.route('/python/(<text>)', strict_slashes=False)
+@app.route('/python/<text>', strict_slashes=False)
 def python_page(text="is cool"):
     """Displays Python followed by the value of the text variable
     """
