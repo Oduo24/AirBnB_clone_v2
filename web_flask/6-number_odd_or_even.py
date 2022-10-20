@@ -50,9 +50,10 @@ def number_template(n):
     """
     return render_template('5-number.html', number=n)
 
+
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def number_odd_or_even(n):
-    """Displays if n is odd or even
+    """Displays template if in is a number
     """
     return render_template('6-number_odd_or_even.html', number=n)
 
