@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def hello_hbnb():
-    """Displays Hello HBNB!"""
+    """Displays Hello HBNB!
+    """
     return 'Hello HBNB!'
 
 
@@ -21,8 +22,7 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_display(text):
-    """Displays C followed by the text parameter
-    """
+    """Displays C followed by the value of the text"""
     return 'C {}'.format(text.replace('_', ' '))
 
 
