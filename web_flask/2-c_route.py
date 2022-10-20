@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines three routes"""
+"""Main module, deefines three routes"""
 
 
 from flask import Flask
@@ -22,10 +22,11 @@ def hbnb():
 
 @app.route('/c/<text>', strict_slashes=False)
 def c_display(text):
-    """Displays C followed by the value of the text"""
-    return 'C {}'.format(text.replace('_', ' '))
+    """Displays C followed by the value of the text
+    """
+    text = text.replace('_',' ')
+    return 'C {}'.format(text)
 
 
 if __name__ == '__main__':
-    """Main File"""
     app.run(host='0.0.0.0', port=5000)
