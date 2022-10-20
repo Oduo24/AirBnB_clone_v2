@@ -1,6 +1,10 @@
 #!/usr/bin/python3
 """Starts a basic flask application"""
 from flask import Flask
+import os
+
+os.environ['FLASK_APP'] = '0-hello_route.py'
+
 app = Flask(__name__)
 
 
