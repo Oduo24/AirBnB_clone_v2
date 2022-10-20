@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Routes Module"""
+"""4-number_route Module"""
 from flask import Flask
 
 app = Flask(__name__)
@@ -29,19 +29,20 @@ def C_page(text):
 @app.route('/python/')
 @app.route('/python/<text>', strict_slashes=False)
 def python_page(text="is cool"):
-    """Displays Python followed by the value of the text variable
-    """
-    text = text.replace('_', ' ')
+    """Displays 'Python (text variable with spaces instead of _'s)'
+        upon visiting /python/<text> page
+        (text default = "is cool")"""
+    text = text.replace("_", " ")
     return "Python {}".format(text)
 
+
 @app.route('/number/<int:n>', strict_slashes=False)
-def is_integer(n):
+def number_page(n):
     """Displays '(Variable n) is a number'
         upon visiting /number/(number) page
-        if n is really a number.
-        """
+        if n is really a number."""
     return "{} is a number".format(n)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host="0.0.0.0")
