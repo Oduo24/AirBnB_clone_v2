@@ -36,9 +36,12 @@ def python_page(text="is cool"):
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def is_integer(n):
-    """Determines if n is an integer
-    """
+    """Displays '(Variable n) is a number'
+        upon visiting /number/(number) page
+        if n is really a number.
+        """
     return "{} is a number".format(n)
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
