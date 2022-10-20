@@ -1,32 +1,30 @@
 #!/usr/bin/python3
-"""Main module, deefines three routes"""
-
-
+"""2-c_route Module"""
 from flask import Flask
 
 app = Flask(__name__)
 
+
 @app.route('/', strict_slashes=False)
-def hello_hbnb():
-    """Displays Hello HBNB!
-    """
-    return 'Hello HBNB!'
+def hello_page():
+    """Displays 'Hello HBNB!' upon visiting root page"""
+    return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
-def hbnb():
-    """Displays HBNB
-    """
-    return 'HBNB'
+def hbnb_page():
+    """Displays 'HBNB' upon visiting /hbnb page"""
+    return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def c_display(text):
-    """Displays C followed by the value of the text
-    """
-    text = text.replace('_', ' ')
+def C_page(text):
+    """Displays 'C (text variable with spaces instead of _'s)'
+        upon visiting /c/<text> page
+        (text is optional)"""
+    text = text.replace("_", " ")
     return "C {}".format(text)
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host="0.0.0.0")
